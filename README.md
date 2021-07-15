@@ -24,15 +24,15 @@ This contract accepts Ether into the contract and divides the Ether evenly among
     - Employee 1 Address: 0x201BFd4F1012e13De62016df0d655e30C630E798
     - Employee 2 Address : 0x5AE7346002165BeA1D6272553483211318B46063
     - Employee 3 Address : 0xEdeC4e734502c5198014860117EeFAa98219165c
-![AssociateProfitSplitter Ganache Before executing Smart Contract](./Screenshots/AssociateProfitSplitter_Before_Ganache.png)
+![AssociateProfitSplitter Ganache Before executing Smart Contract](./ScreenShots/AssociateProfitSplitter_Before_Ganache.png)
 4. Click Deploy. This will deploy a smart contract on ganache. Metamask should pop up for confirmation showing the gas used to deploy. 
 5. Optional: Click on balance. This should always return 0, as Ether is always sent to the beneficiaries. If it does not, the `deposit` function is not handling the remainders properly and should be fixed. This will serve as a test function of sorts. This can be done anytime, in this test was done once before calling deposit and once after.
 7. In the value field, enter the amount to deposit in the associate employee's accounts; for testing purposes, we entered 25000000000000000000 wei (25 ETH).
 6. Click on the deposit function button. This will again pop up Metamask, confirming the transaction, note the amount at the top.
 7. Verify-in Ganache, the HR account should be the amount less, and the three employee accounts should have gained amount divided by 3. In our case, since we deposited 25 ETH, the HR account was deducted 25 ETH + gas used, and each employee account gained 8.333333333 ETH. The remainder (if any left) was sent back to the sender - HR, but it is such a small amount (in weight) that it does not show on ganache.
-![AssociateProfitSplitter Ganache Before executing Smart Contract](./Screenshots/AssociateProfitSplitter_After_Ganache.png)
+![AssociateProfitSplitter Ganache Before executing Smart Contract](./ScreenShots/AssociateProfitSplitter_After_Ganache.png)
 
-![AssociateProfitSplitter Steps](./Screenshots/AssociateProfitSplitter.gif)
+![AssociateProfitSplitter Steps](./ScreenShots/AssociateProfitSplitter.gif)
 
 #### Kovan Testnet Contract Address 
 Address : 0xaF741Baf28554ab4A9aF9E5Dd5cc8e524a7314cE
@@ -50,16 +50,16 @@ In this contract, rather than splitting the profits between Associate-level empl
     - Employee 1 Address: 0x201BFd4F1012e13De62016df0d655e30C630E798
     - Employee 2 Address : 0x5AE7346002165BeA1D6272553483211318B46063
     - Employee 3 Address : 0xEdeC4e734502c5198014860117EeFAa98219165c
-  ![TieredProfitSplitter Ganache Before executing Smart Contract](./Screenshots/TieredProfitSplitter_Before_Ganache.png)
+  ![TieredProfitSplitter Ganache Before executing Smart Contract](./ScreenShots/TieredProfitSplitter_Before_Ganache.png)
 4. Click Deploy; this will create a smart contract. Metamask should pop up and needs confirmation to deploy the contract on ganache. 
 5. Optional: Click on balance; this should always return 0, as Ether is always sent to the beneficiaries. If it does not, the `deposit` function is not handling the remainders properly and should be fixed. This will serve as a test function of sorts.
 7. In the value field, enter the amount to deposit in the associate employee's accounts, for testing purposes, we entered 50000000000000000000 wei (50 ETH).
 6. Click on the deposit function button; this will again pop up Metamask, confirming the transaction; note the amount at the top.
 7. Verify-in Ganache, the HR account should be the amount less, and the three employee accounts should have gained amount according to the percentage assigned. 
 In our case, since we deposited 50 ETH, the HR account was deducted 50 ETH + gas, and each Bob's account gained 7.5 ETH (15%), CTO's account gained 12.5 ETH (25%), and CEO's account gained 30 ETH (60%), there was no eth left over. If there were a remainder, it would be sent to the CEO, but such a small wei, that it does not show on ganache.
-![AssociateProfitSplitter Ganache Before executing Smart Contract](./Screenshots/TieredProfitSplitter_After_Ganache.png)
+![AssociateProfitSplitter Ganache Before executing Smart Contract](./ScreenShots/TieredProfitSplitter_After_Ganache.png)
 
-![AssociateProfitSplitter Steps](./Screenshots/TieredProfitSplitter.gif)
+![AssociateProfitSplitter Steps](./ScreenShots/TieredProfitSplitter.gif)
 
 #### Kovan Testnet Contract Address 
 Address : 0x52F10D65A80D3907b5425e455c1eB348a7c2F87b
@@ -81,8 +81,8 @@ This contract will manage an employee's "deferred equity incentive plan," in whi
 6. Click on the distribute button, which will throw an error, as the shares have not vested yet, have to wait a year for it to vest.
 7. Click on fastforward, and try steps 5 & 6 again, will be the same result, three more times, as we have to wait 365 days, and clicking fast forward four times, will get us to a value more than 365 (400)
 8. Now go over steps 6 and then 5; step 6 will not give us an error now, and the transaction will go through, and on step 5, the shares now are 250 (the annual distribution we have setup)  
-![![DeferredEquityPlan1 Steps](./Screenshots/DeferredEquityPlan1.gif)
- Steps](./Screenshots/DeferredEquityPlan1.gif)
+![![DeferredEquityPlan1 Steps](./ScreenShots/DeferredEquityPlan1.gif)
+ Steps](./ScreenShots/DeferredEquityPlan1.gif)
 9. Test: Shares can only be distributed if the contract is active: The contract can be deactivated anytime by clicking on deactivate, and click step 6 again, which should give an error: Contract not active.
 
 ### Test: Shares can only be distributed if the sender is HR or the employee
@@ -101,7 +101,7 @@ This contract will manage an employee's "deferred equity incentive plan," in whi
 
 ### Test: After 5 years (500 fake nows), the max value of the distributed_shares does not exceed 1000.
 
-![![AssociateProfitSplitter Steps](./Screenshots/DeferredEquityPlan.gif)
+![![AssociateProfitSplitter Steps](./ScreenShots/DeferredEquityPlan.gif)
 
 #### Kovan Testnet Contract Address 
 Address : 0x5Df75f45733FaD38c1C22e872c7990f62b29Babf
